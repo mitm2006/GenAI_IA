@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  # ── PostgreSQL Database ─────────────────────────────────────
+  db:
+    image: postgres:16-alpine
+    container_name: bi_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: bi_analytics
+      POSTGRES_USER: bi_user
+      POSTGRES_PASSWORD: bi_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ../sql/ddl.sql:/docker-entrypoint-initdb.d/01_ddl.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bi_user -d bi_analytics"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:
+    driver: local

@@ -1,0 +1,39 @@
+# Environment
+.env
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Data
+chroma_data/
+*.db
+*.db-shm
+*.db-wal
+
+# Logs
+logs/
+
+# Docker
+docker/volumes/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Agent/Gemini
+.gemini/
+.agents/
+.agent/
+_agents/
+_agent/
+
+llm_powereed_sql\.pytest_cache

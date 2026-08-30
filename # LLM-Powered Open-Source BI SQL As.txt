@@ -1,0 +1,193 @@
+# LLM-Powered Open-Source BI SQL Assistant
+
+## 1. Project Overview
+
+The objective of this project is to build a production-oriented **Natural Language Business Intelligence Assistant** that allows users to query structured enterprise data using plain English and receive validated SQL results, automated visualizations, and business-ready insights.
+
+This system replaces traditional SQL dependency with an AI-driven analytics interface powered entirely by open-source infrastructure.
+
+The focus is not just text-to-SQL conversion, but building a secure, scalable, enterprise-grade analytics system.
+
+---
+
+## 2. Problem Statement
+
+In most organizations:
+
+- Business teams depend on data analysts for SQL queries.
+- Ad-hoc reporting creates bottlenecks.
+- Decision-making is delayed due to technical barriers.
+
+This project aims to build a self-service analytics system where:
+
+User Question → AI → Validated SQL → Database → Visualization → Insight
+
+---
+
+## 3. What We Are Trying To Build
+
+We are building an end-to-end AI analytics pipeline with the following capabilities:
+
+1. Convert natural language questions into structured SQL queries.
+2. Use schema-aware prompting to reduce hallucinations.
+3. Validate SQL queries before execution to prevent security risks.
+4. Execute queries on a properly designed relational database.
+5. Automatically choose and render appropriate visualizations.
+6. Generate executive-level business summaries.
+7. Deploy the system in a containerized production-ready environment.
+
+This is positioned as an AI-powered self-service BI system.
+
+---
+
+## 4. System Architecture (High-Level)
+
+User Query  
+→ Schema Retrieval Layer  
+→ LLM (Mistral via Ollama)  
+→ SQL Validation Layer  
+→ PostgreSQL Execution  
+→ Pandas Processing  
+→ Auto Visualization (Plotly)  
+→ Insight Summary Generation  
+
+---
+
+## 5. Tech Stack
+
+### AI Layer
+- Mistral-7B-Instruct (Open-source LLM)
+- Ollama (Local model hosting)
+- Sentence Transformers (Embeddings)
+- ChromaDB (Vector database for schema retrieval)
+
+### Backend
+- Python
+- FastAPI
+- SQLAlchemy
+
+### Database
+- PostgreSQL
+- Star Schema (Fact + Dimension design)
+
+### Data Processing
+- Pandas
+- NumPy
+
+### Visualization
+- Plotly
+
+### Deployment
+- Docker
+- (Optional) Render / Railway / AWS
+
+---
+
+## 6. Database Design
+
+The database will follow a structured analytics schema:
+
+Fact Table:
+- fact_sales (transaction-level data)
+
+Dimension Tables:
+- dim_customer
+- dim_product
+- dim_date
+- dim_region
+
+Proper schema design is critical for analytical query accuracy and realistic enterprise simulation.
+
+---
+
+## 7. Key Technical Components
+
+### 1. Schema-Aware Prompting
+Inject database schema and constraints into the LLM prompt to reduce hallucinated columns and incorrect joins.
+
+### 2. SQL Guardrails
+- Allow only SELECT statements
+- Block destructive queries
+- Enforce LIMIT
+- Prevent SQL injection
+- Apply execution timeouts
+
+### 3. Embedding-Based Schema Retrieval
+Retrieve only relevant tables using vector similarity to reduce token overload and improve accuracy.
+
+### 4. Auto Visualization Engine
+Automatically determine visualization type based on query result structure:
+- Date + Numeric → Line chart
+- Category + Numeric → Bar chart
+- Single numeric → KPI card
+- Complex output → Table
+
+### 5. Insight Generator
+Generate business-level summaries from SQL outputs to simulate executive reporting.
+
+---
+
+## 8. Important Deliverables
+
+For this project to be considered strong and internship-ready, the following deliverables are mandatory:
+
+### 1. Functional System
+- Working natural language to SQL conversion
+- Correct query execution
+- Automatic visualization rendering
+- Insight generation
+
+### 2. Clean Database Schema
+- Well-designed star schema
+- Proper foreign keys
+- Realistic dataset
+
+### 3. Security Layer
+- SQL validation
+- Read-only database user
+- Query constraints
+
+### 4. Documentation
+- Clear README
+- Architecture diagram
+- Setup instructions
+- Sample queries and outputs
+
+### 5. Deployment
+- Dockerized application
+- Public demo link (if possible)
+
+### 6. Logging & Monitoring (Strong Bonus)
+- Query history tracking
+- Latency measurement
+- Error logging
+- Failed query regeneration logic
+
+---
+
+## 9. Success Criteria
+
+The project is considered successful if:
+
+- The LLM generates correct SQL for majority of business queries.
+- Hallucinated tables/columns are minimized.
+- Queries execute securely.
+- Visualizations are automatically appropriate.
+- Insights are understandable to non-technical users.
+- The system is deployable and reproducible.
+
+---
+
+## 10. Project Outcome
+
+This project demonstrates capabilities in:
+
+- Applied LLM integration
+- Prompt engineering
+- SQL and database design
+- Backend API development
+- Vector search and embeddings
+- Business analytics automation
+- Production-ready AI system design
+
+This is positioned as an enterprise-grade AI analytics assistant rather than a simple chatbot.
