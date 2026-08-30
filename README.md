@@ -1,4 +1,4 @@
-# 🧠 LLM-Powered Open-Source BI SQL Assistant
+# LLM-Powered Open-Source BI SQL Assistant
 
 An AI-powered Natural Language Business Intelligence system that converts plain English questions into validated SQL queries, executes them against an analytics database, auto-generates visualizations, and delivers executive-level insights.
 
@@ -6,25 +6,25 @@ An AI-powered Natural Language Business Intelligence system that converts plain 
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 | Feature | Description |
 |---------|-------------|
-| 🗣️ **Natural Language to SQL** | Ask questions in plain English — AI generates precise SQL |
-| 🛡️ **8-Layer SQL Guardrails** | SELECT-only enforcement, injection detection, LIMIT constraints, schema validation |
-| 🙈 **Reasoning Suppression** | The reasoning-capable model's internal chain-of-thought never leaves the backend |
-| 📊 **Auto-Visualization** | Intelligent chart selection: line, bar, pie, scatter, KPI cards, tables |
-| 💡 **Instant Insights** | Executive-level business summaries computed from the result set |
-| 🔍 **Schema-Aware Prompting** | Only relevant tables injected via embedding similarity (ChromaDB) |
-| 🟢 **Confidence Scoring** | 0–100% score for each generated SQL with colored badges |
-| 🔄 **Auto-Retry** | Failed queries are self-corrected by feeding errors back to the model |
-| 💬 **Multi-Turn Context** | Follow-up questions like "Break that down by region" |
-| 📌 **Smart Suggestions** | Schema-aware clickable query suggestions |
-| 📈 **Analytics Dashboard** | Pre-built KPI and trend panels served by the API |
+| **Natural Language to SQL** | Ask questions in plain English — AI generates precise SQL |
+| **8-Layer SQL Guardrails** | SELECT-only enforcement, injection detection, LIMIT constraints, schema validation |
+| **Reasoning Suppression** | The reasoning-capable model's internal chain-of-thought never leaves the backend |
+| **Auto-Visualization** | Intelligent chart selection: line, bar, pie, scatter, KPI cards, tables |
+| **Instant Insights** | Executive-level business summaries computed from the result set |
+| **Schema-Aware Prompting** | Only relevant tables injected via embedding similarity (ChromaDB) |
+| **Confidence Scoring** | 0–100% score for each generated SQL with colored badges |
+| **Auto-Retry** | Failed queries are self-corrected by feeding errors back to the model |
+| **Multi-Turn Context** | Follow-up questions like "Break that down by region" |
+| **Smart Suggestions** | Schema-aware clickable query suggestions |
+| **Analytics Dashboard** | Pre-built KPI and trend panels served by the API |
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 React + TypeScript SPA  (browser — holds no credentials)
@@ -49,7 +49,7 @@ Design rationale and evaluation: [docs/research-paper.md](docs/research-paper.md
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **AI:** `openai/gpt-oss-20b` via the Groq API, Sentence Transformers, ChromaDB
 - **Backend:** Python, FastAPI, SQLAlchemy, httpx
@@ -60,7 +60,7 @@ Design rationale and evaluation: [docs/research-paper.md](docs/research-paper.md
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - **Python 3.11+**
@@ -133,20 +133,20 @@ Errors use a uniform envelope: `{"error": "<code>", "message": "<human text>"}`.
 
 ---
 
-## 💬 Sample Queries
+## Sample Queries
 
 | Question | Expected Visualization |
 |----------|----------------------|
-| "What were total sales in 2024?" | 📊 KPI Card |
-| "Top 10 products by revenue" | 📊 Bar Chart |
-| "Monthly revenue trend for 2024" | 📈 Line Chart |
-| "Sales by customer segment" | 🥧 Pie Chart |
-| "Top 5 cities by profit" | 📊 Bar Chart |
-| "Quarterly profit: 2023 vs 2024" | 📈 Line Chart |
+| "What were total sales in 2024?" | KPI Card |
+| "Top 10 products by revenue" | Bar Chart |
+| "Monthly revenue trend for 2024" | Line Chart |
+| "Sales by customer segment" | Pie Chart |
+| "Top 5 cities by profit" | Bar Chart |
+| "Quarterly profit: 2023 vs 2024" | Line Chart |
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 llm_powereed_sql/
@@ -188,7 +188,7 @@ llm_powereed_sql/
 
 ---
 
-## 🧪 Running Tests
+## Running Tests
 
 ```bash
 python -m pytest tests/ -v
@@ -202,7 +202,7 @@ cd frontend && npm run typecheck
 
 ---
 
-## 🔐 Security Notes
+## Security Notes
 
 - `GROQ_API_KEY` is read from the environment only and stays server-side.
 - All LLM traffic originates from FastAPI; the browser never contacts Groq.
@@ -214,6 +214,6 @@ cd frontend && npm run typecheck
 
 ---
 
-## 📄 License
+## License
 
 This project is open-source and available under the MIT License.
