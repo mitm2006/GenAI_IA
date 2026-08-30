@@ -2,7 +2,7 @@
 
 An AI-powered Natural Language Business Intelligence system that converts plain English questions into validated SQL queries, executes them against an analytics database, auto-generates visualizations, and delivers executive-level insights.
 
-**Powered by:** `openai/gpt-oss-20b` on Groq • FastAPI • React + TypeScript • PostgreSQL / SQLite • ChromaDB • Plotly
+**Powered by :** `openai/gpt-oss-20b` on Groq • FastAPI • React + TypeScript • PostgreSQL / SQLite • ChromaDB • Plotly
 
 ---
 
